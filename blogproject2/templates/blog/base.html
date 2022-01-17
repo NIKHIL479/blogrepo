@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+{% load blog_tags %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <title>{%block title_block%}{%endblock%}</title>
+  </head>
+  <body>
+    <div class="content">
+    {%block content%}
+    {%endblock%}
+      </div>
+      <div class="sidebar">
+        <h2>Nikhil's Blog</h2>
+        <p>published posts upto now:{%  total_posts%}</p>
+        <h1>Latest posts:</h1>
+        {% show_latest_posts%}
+      </div>
+
+  </body>
+</html>
